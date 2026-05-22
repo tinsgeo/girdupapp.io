@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GirdUp — Support</title>
+<meta name="description" content="GirdUp support center. Get help with app locking, Bible reading, WordKeeper AI, subscriptions, and more.">
+<link rel="icon" href="/girdup_favicon_32.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:#0a0a0a;--off:#111111;--dark:#1a1a1a;
+    --gold:#c9a84c;--gold-lt:#e8c97a;--gold-dim:#8a6e2f;--gold-faint:rgba(201,168,76,0.07);
+    --white:#f5f0e8;--muted:#b8b0a0;--subtle:#666;--border:rgba(201,168,76,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+
+  /* ── NAV ── */
+  nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.05);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;color:var(--white);text-decoration:none;}
+  .nav-logo span{color:var(--gold);}
+  .nav-back{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+  .nav-back:hover{color:var(--gold);}
+
+  /* ── HERO ── */
+  .hero{padding:80px 40px 60px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(201,168,76,0.06) 0%,transparent 65%);pointer-events:none;}
+  .hero-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+  .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,88px);letter-spacing:3px;color:var(--white);line-height:1;margin-bottom:16px;}
+  .hero-title span{color:var(--gold);}
+  .hero-sub{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 40px;line-height:1.75;}
+
+  /* ── SEARCH ── */
+  .search-wrap{max-width:560px;margin:0 auto;position:relative;z-index:2;}
+  .search-input{width:100%;background:var(--off);border:1px solid rgba(201,168,76,0.25);padding:15px 52px 15px 20px;color:var(--white);font-size:15px;font-family:'DM Sans',sans-serif;font-weight:300;outline:none;transition:border-color .2s;border-radius:0;}
+  .search-input::placeholder{color:#444;}
+  .search-input:focus{border-color:var(--gold);}
+  .search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--gold-dim);font-size:17px;pointer-events:none;}
+
+  /* ── LAYOUT ── */
+  .rule{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.15),transparent);}
+  .page{max-width:1100px;margin:0 auto;padding:72px 40px 100px;}
+
+  /* ── CATEGORY GRID ── */
+  .section-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:2px;color:var(--white);margin-bottom:12px;line-height:1;}
+  .section-sub{font-size:15px;color:var(--muted);margin-bottom:40px;max-width:600px;line-height:1.7;}
+
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:80px;}
+  .cat-card{background:var(--off);padding:32px 28px;cursor:pointer;text-decoration:none;display:block;border-top:3px solid transparent;transition:all .2s;}
+  .cat-card:hover{background:#161616;border-top-color:var(--gold);}
+  .cat-icon{font-size:26px;margin-bottom:14px;display:block;}
+  .cat-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--white);margin-bottom:7px;}
+  .cat-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+  .cat-count{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);margin-top:12px;display:block;}
+
+  /* ── FAQ SECTIONS ── */
+  .faq-section{margin-bottom:64px;scroll-margin-top:80px;}
+  .faq-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,0.2);}
+  .faq-icon{font-size:22px;}
+  .faq-section-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;color:var(--white);}
+
+  .faq-item{border-bottom:1px solid rgba(255,255,255,0.05);}
+  .faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .faq-q-text{font-size:15px;font-weight:500;color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.5;}
+  .faq-chevron{color:var(--gold);font-size:18px;flex-shrink:0;transition:transform .25s ease;}
+  .faq-item.open .faq-chevron{transform:rotate(180deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-item.open .faq-answer{max-height:800px;}
+  .faq-answer-inner{padding:0 0 20px;font-size:14px;color:var(--muted);line-height:1.85;}
+  .faq-answer-inner p{margin-bottom:12px;}
+  .faq-answer-inner p:last-child{margin-bottom:0;}
+  .faq-answer-inner strong{color:var(--white);font-weight:500;}
+  .faq-answer-inner a{color:var(--gold);text-decoration:none;}
+  .faq-answer-inner a:hover{text-decoration:underline;}
+
+  /* Step list */
+  .steps{list-style:none;padding:0;margin:10px 0 12px;}
+  .steps li{display:flex;gap:12px;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;color:var(--muted);}
+  .steps li:last-child{border-bottom:none;}
+  .snum{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:var(--gold);font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+  /* Info box */
+  .info{background:rgba(201,168,76,0.05);border:1px solid var(--border);padding:14px 18px;margin:12px 0;font-size:13px;color:var(--muted);line-height:1.7;}
+  .info strong{color:var(--gold);font-weight:500;}
+
+  /* ── CONTACT ── */
+  .contact-bg{background:var(--off);padding:80px 0;}
+  .contact-inner{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+  .contact-card{background:var(--dark);padding:36px 28px;text-align:center;}
+  .contact-icon{font-size:30px;margin-bottom:14px;display:block;}
+  .contact-card h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--white);margin-bottom:8px;}
+  .contact-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+  .contact-btn{display:inline-block;border:1px solid var(--gold-dim);color:var(--gold);padding:10px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif;}
+  .contact-btn:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
+  .contact-btn.primary{background:var(--gold);color:var(--black);border-color:var(--gold);}
+  .contact-btn.primary:hover{background:var(--gold-lt);}
+
+  /* ── FOOTER ── */
+  footer{background:var(--off);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
+  footer span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--subtle);}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:4px;color:var(--gold);}
+  footer a{color:var(--subtle);text-decoration:none;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+  footer a:hover{color:var(--gold);}
+
+  /* hidden for search */
+  .faq-item.hidden{display:none;}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    nav{padding:0 20px;}
+    .hero{padding:60px 20px 40px;}
+    .page{padding:48px 20px 80px;}
+    .cat-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .contact-inner{padding:0 20px;}
+    footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Gird<span>Up</span></a>
+  <a href="/" class="nav-back">← Back to GirdUp</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-label">Help Center</span>
+  <h1 class="hero-title">How Can We <span>Help?</span></h1>
+  <p class="hero-sub">Find answers about app locking, Bible reading, WordKeeper AI, subscriptions, and more.</p>
+  <div class="search-wrap">
+    <input class="search-input" type="text" placeholder="Search for help..." id="searchInput" oninput="filterFAQs(this.value)">
+    <span class="search-icon">⌕</span>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- PAGE -->
+<div class="page">
+
+  <!-- CATEGORY GRID -->
+  <span class="section-label">Browse by Topic</span>
+  <h2 class="section-title">Support Topics</h2>
+  <p class="section-sub">Tap a category to jump to what you need.</p>
+
+  <div class="cat-grid">
+    <a href="#getting-started" class="cat-card">
+      <span class="cat-icon">🏹</span>
+      <p class="cat-title">Getting Started</p>
+      <p class="cat-desc">Onboarding, setup, account creation, and your first day with GirdUp.</p>
+      <span class="cat-count">6 articles</span>
+    </a>
+    <a href="#app-locking" class="cat-card">
+      <span class="cat-icon">🔒</span>
+      <p class="cat-title">App Locking</p>
+      <p class="cat-desc">Choosing apps to lock, troubleshooting, and adjusting your schedule.</p>
+      <span class="cat-count">7 articles</span>
+    </a>
+    <a href="#bible-prayer" class="cat-card">
+      <span class="cat-icon">📖</span>
+      <p class="cat-title">Bible &amp; Prayer</p>
+      <p class="cat-desc">Reading plans, translations, prayer journal, and daily sessions.</p>
+      <span class="cat-count">5 articles</span>
+    </a>
+    <a href="#wordkeeper" class="cat-card">
+      <span class="cat-icon">⚔️</span>
+      <p class="cat-title">WordKeeper AI</p>
+      <p class="cat-desc">Understanding WordKeeper, message limits, and how it uses Scripture.</p>
+      <span class="cat-count">5 articles</span>
+    </a>
+    <a href="#billing" class="cat-card">
+      <span class="cat-icon">💳</span>
+      <p class="cat-title">Billing &amp; Subscriptions</p>
+      <p class="cat-desc">Plans, pricing, upgrades, cancellations, and refund policy.</p>
+      <span class="cat-count">5 articles</span>
+    </a>
+    <a href="#account" class="cat-card">
+      <span class="cat-icon">👤</span>
+      <p class="cat-title">Account &amp; Privacy</p>
+      <p class="cat-desc">Profile settings, data privacy, deleting your account, notifications.</p>
+      <span class="cat-count">4 articles</span>
+    </a>
+  </div>
+
+  <!-- ── GETTING STARTED ── -->
+  <div class="faq-section" id="getting-started">
+    <div class="faq-header">
+      <span class="faq-icon">🏹</span>
+      <h2 class="faq-section-title">Getting Started</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I set up GirdUp for the first time?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>When you first open GirdUp, a quick 2-minute onboarding sets up your entire experience:</p>
+        <ul class="steps">
+          <li><span class="snum">1</span>Enter your first name to personalize your experience.</li>
+          <li><span class="snum">2</span>Tell us why you're here — shapes how WordKeeper guides you.</li>
+          <li><span class="snum">3</span>Select your daily battles so WordKeeper knows how to meet you.</li>
+          <li><span class="snum">4</span>Tell us where you are in your walk with God.</li>
+          <li><span class="snum">5</span>Choose which apps to lock until reading and prayer are complete.</li>
+          <li><span class="snum">6</span>Make the commitment. The lock activates the next morning.</li>
+        </ul>
+        <p>Your first lock activates the morning after setup — giving you tonight to get ready.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What is the daily goal and can I change it?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>The default daily goal is <strong>15 minutes of Bible reading + at least one prayer</strong>. Both must be completed before your locked apps become accessible.</p>
+        <p>Adjust your reading goal in <strong>Settings → Daily Goal</strong>. Options range from 10 to 60 minutes. The prayer step is core to the GirdUp commitment and cannot be removed.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Does GirdUp require an account?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Yes, a free GirdUp account is required. This syncs your streak, reading progress, and prayer journal across devices and ensures your data isn't lost if you reinstall.</p>
+        <p>Sign up with your email address or use Apple Sign In. We never share your data with third parties. See our <a href="/privacy">Privacy Policy</a>.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Can I use GirdUp on multiple devices?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Yes. Your account syncs streak, reading history, and prayer journal across all devices signed into the same account. Just download GirdUp and sign in.</p>
+        <p>App locking is device-specific — you'll select which apps to lock on each device separately since different devices may have different apps installed.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I update my onboarding answers?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <ul class="steps">
+          <li><span class="snum">1</span>Tap your profile icon in the top right corner.</li>
+          <li><span class="snum">2</span>Select <strong>My Profile</strong>.</li>
+          <li><span class="snum">3</span>Tap <strong>Edit Purpose &amp; Walk</strong> to update your answers.</li>
+        </ul>
+        <p>WordKeeper immediately adjusts its tone and Scripture references based on your updated answers.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What happens if I miss a day?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Your streak resets if you miss a day — but that's part of the accountability. God's mercies are new every morning (Lamentations 3:22-23). A broken streak is not a reason to quit.</p>
+        <div class="info"><strong>Streak Freeze:</strong> Pro and Academy subscribers get one Streak Freeze per month. Find it in <strong>Settings → Streak</strong>.</div>
+        <p>The locked apps reactivate the following morning. Complete your reading and prayer to unlock them again.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ── APP LOCKING ── -->
+  <div class="faq-section" id="app-locking">
+    <div class="faq-header">
+      <span class="faq-icon">🔒</span>
+      <h2 class="faq-section-title">App Locking</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How does app locking work?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>GirdUp uses Apple's Screen Time API to block access to the specific apps you choose. Each morning GirdUp activates the lock. The apps remain inaccessible until you complete your Bible reading timer and prayer inside GirdUp.</p>
+        <p>Once both are done, GirdUp removes the block and your chosen apps are available for the rest of the day. The lock reactivates the following morning.</p>
+        <div class="info"><strong>Note:</strong> GirdUp locks only the specific apps you select — not your entire phone. You can still make calls, send messages, and use any apps you didn't choose to lock.</div>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Which apps can I lock?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>You can lock any app installed on your device. Popular choices include social media (Instagram, TikTok, X, Facebook, Snapchat), news apps, streaming services (YouTube, Netflix), browsers (Safari, Chrome), and games.</p>
+        <p>You cannot lock core system apps like Phone, Messages, or the App Store.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I add or remove apps from my lock list?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <ul class="steps">
+          <li><span class="snum">1</span>Open GirdUp and tap <strong>Settings</strong>.</li>
+          <li><span class="snum">2</span>Tap <strong>Manage Locked Apps</strong>.</li>
+          <li><span class="snum">3</span>Toggle apps on or off.</li>
+          <li><span class="snum">4</span>Changes take effect starting the next morning.</li>
+        </ul>
+        <p>Changes made mid-day don't affect the current day's lock.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">My locked apps are still accessible. What's wrong?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <ul class="steps">
+          <li><span class="snum">1</span>Go to <strong>iOS Settings → Screen Time</strong> and verify GirdUp has permission.</li>
+          <li><span class="snum">2</span>Make sure Screen Time is enabled (<strong>Settings → Screen Time → Turn On Screen Time</strong>).</li>
+          <li><span class="snum">3</span>Force-close and reopen GirdUp.</li>
+          <li><span class="snum">4</span>Ensure your iOS version is 16.0 or higher via <strong>Settings → General → Software Update</strong>.</li>
+        </ul>
+        <p>Still not working? Email us at <a href="mailto:support@girdupapp.io">support@girdupapp.io</a> with your iOS version and device model.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Can I unlock my apps early in an emergency?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Yes. You can use <strong>Emergency Override</strong> in <strong>Settings → Emergency Override</strong> to unlock apps for that day. Using an override breaks your streak.</p>
+        <p>Pro and Academy subscribers can activate <strong>Grace Mode</strong> (up to 3 days/month) which pauses the lock without breaking your streak.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What happens if I delete GirdUp?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Deleting GirdUp automatically removes the app lock and all locked apps become accessible immediately. Your account data is preserved for 90 days. Reinstall and sign back in within 90 days to restore everything.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Can I pause the lock for vacation or illness?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Pro and Academy subscribers can activate <strong>Grace Mode</strong> for up to 3 days per month — pauses the lock without breaking your streak. Find it in <strong>Settings → Grace Mode</strong>.</p>
+        <p>Free users can use Emergency Override, which pauses the lock for 24 hours but resets the streak.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ── BIBLE & PRAYER ── -->
+  <div class="faq-section" id="bible-prayer">
+    <div class="faq-header">
+      <span class="faq-icon">📖</span>
+      <h2 class="faq-section-title">Bible &amp; Prayer</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What Bible translations are available?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>GirdUp includes KJV, NKJV, NIV, ESV, NLT, and CSB at no additional cost. Switch translations at any time in <strong>Settings → Bible Translation</strong>. WordKeeper references the same translation you're reading.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How does the reading timer work?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>When you open the Bible reader, a timer automatically starts counting toward your daily goal. A progress ring shows how close you are to completion. The timer pauses if you switch apps or lock your screen.</p>
+        <div class="info"><strong>Note:</strong> The timer tracks time in the Word — not pages or chapters. Read whatever passage you choose.</div>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Does GirdUp have reading plans?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Yes. Available plans include Bible in a Year (365 days), New Testament in 90 Days, Psalms &amp; Proverbs (30 days), Sermon on the Mount (21 days), and the Armor of God plan (8 days). Start a plan in <strong>Bible → Reading Plans</strong>.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I complete the prayer step?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>After your reading timer completes, GirdUp prompts you to pray. You have three options:</p>
+        <ul class="steps">
+          <li><span class="snum">1</span><strong>Guided prayer</strong> — A structured prompt based on your battles and current reading.</li>
+          <li><span class="snum">2</span><strong>Prayer journal</strong> — Type your prayer and save it privately.</li>
+          <li><span class="snum">3</span><strong>Prayed</strong> — Simply confirm you've prayed. No logging required.</li>
+        </ul>
+        <p>Any of the three options completes the prayer step and unlocks your apps.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Can I save and highlight verses?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Yes. Tap and hold any verse to highlight it, save it to your verse library, add a note, share it as a styled image, or open it in WordKeeper for deeper discussion. Access saved verses in <strong>Bible → Saved Verses</strong>.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ── WORDKEEPER ── -->
+  <div class="faq-section" id="wordkeeper">
+    <div class="faq-header">
+      <span class="faq-icon">⚔️</span>
+      <h2 class="faq-section-title">WordKeeper AI</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What is WordKeeper and how does it work?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>WordKeeper is GirdUp's Biblical guidance companion — an AI powered by Anthropic's Claude, configured to root every response in Scripture. Bring it your doubt, fear, temptation, grief, or questions. It meets you where you are and walks you to the Word.</p>
+        <div class="info"><strong>Important:</strong> WordKeeper is an AI. It can be wrong. Always test what it says against Scripture yourself — that's the whole point of GirdUp.</div>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Which plan includes WordKeeper?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>WordKeeper is available on <strong>Pro ($9.99/mo)</strong> and <strong>Academy ($29.99/mo)</strong> plans. Pro includes 50 messages per day. Academy includes unlimited messages. WordKeeper is not available on the Free plan.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Is WordKeeper a replacement for my pastor or a therapist?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>No. WordKeeper is a Biblical guidance tool, not a licensed counselor, therapist, or replacement for your pastor and church community. For serious mental health concerns, please seek professional help. WordKeeper will always point you toward professional support when appropriate.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Are my WordKeeper conversations private?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Yes. Conversations are processed through Anthropic's API and are not stored on our servers. Per Anthropic's enterprise terms, your messages are not used to train AI models. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What if WordKeeper says something I disagree with?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Test it against Scripture — which is exactly what GirdUp is training you to do. WordKeeper is a guide, not an authority. The Bible is the authority. If a response seems off, bring the relevant passage directly to God and a trusted pastor or mentor.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ── BILLING ── -->
+  <div class="faq-section" id="billing">
+    <div class="faq-header">
+      <span class="faq-icon">💳</span>
+      <h2 class="faq-section-title">Billing &amp; Subscriptions</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What plans does GirdUp offer?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p><strong>Free</strong> — App locking, Bible reader, prayer journal, streak tracking, and the How to Read the Bible course.</p>
+        <p><strong>Pro ($9.99/mo)</strong> — Everything in Free plus WordKeeper AI (50 msg/day), advanced reading plans, accountability partner, and Armor of God tracker.</p>
+        <p><strong>Academy ($29.99/mo)</strong> — Everything in Pro plus unlimited WordKeeper AI, all Academy courses, Biblical certifications, and new courses as they drop.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I upgrade or downgrade my plan?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Subscriptions are managed through the App Store. Go to <strong>Settings → Apple Account → Subscriptions</strong> on your iPhone to change or cancel your GirdUp subscription. Changes take effect at the start of your next billing period.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I cancel my subscription?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Go to <strong>Settings → Apple Account → Subscriptions → GirdUp → Cancel Subscription</strong>. Your access continues until the end of the current billing period. We do not offer refunds for partial months.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">Can I get a refund?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>GirdUp subscriptions are billed monthly and do not offer prorated refunds for partial months. All purchases are processed by Apple — refund requests must be submitted directly to Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">I was charged but don't have access to Pro/Academy features.</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <ul class="steps">
+          <li><span class="snum">1</span>Force-close and reopen GirdUp.</li>
+          <li><span class="snum">2</span>Go to <strong>Settings → Subscription</strong> inside the app and tap <strong>Restore Purchases</strong>.</li>
+          <li><span class="snum">3</span>Make sure you're signed into the same Apple ID used for the purchase.</li>
+        </ul>
+        <p>Still not resolved? Email <a href="mailto:support@girdupapp.io">support@girdupapp.io</a> with your Apple ID email and we'll sort it out.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ── ACCOUNT ── -->
+  <div class="faq-section" id="account">
+    <div class="faq-header">
+      <span class="faq-icon">👤</span>
+      <h2 class="faq-section-title">Account &amp; Privacy</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I change my name or profile information?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Go to your profile icon → <strong>My Profile → Edit</strong>. You can update your display name, daily goal, and your purpose and walk answers at any time.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I delete my account?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Go to <strong>Profile → Account → Delete Account</strong>. This permanently removes your Firebase Authentication record and all profile data. This action cannot be undone. Your subscription must be cancelled separately through the App Store before deleting your account.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">What data does GirdUp collect?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>GirdUp collects your account information, onboarding profile answers, reading streak and progress, prayer journal entries, WordKeeper chat content (processed transiently), and subscription status. We do not collect contacts, photos, location, or advertising identifiers. We do not sell your data.</p>
+        <p>See our full <a href="/privacy">Privacy Policy</a> for details.</p>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span class="faq-q-text">How do I manage notifications?</span>
+        <span class="faq-chevron">⌄</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        <p>Go to <strong>iOS Settings → Notifications → GirdUp</strong> to control which notifications you receive. You can also manage notification preferences inside the app at <strong>Settings → Notifications</strong>.</p>
+      </div></div>
+    </div>
+
+  </div>
+
+</div><!-- end page -->
+
+<div class="rule"></div>
+
+<!-- CONTACT SECTION -->
+<div class="contact-bg" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Still Need Help?</span>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-sub">Can't find what you're looking for? We're here.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="contact-icon">✉️</span>
+        <h3>Email Support</h3>
+        <p>Send us a message and we'll get back to you within 1 business day.</p>
+        <a href="mailto:support@girdupapp.io" class="contact-btn primary">support@girdupapp.io</a>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon">📜</span>
+        <h3>Legal &amp; Privacy</h3>
+        <p>Review our full terms, license agreement, and privacy policy.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+          <a href="/eula" class="contact-btn">EULA</a>
+          <a href="/privacy" class="contact-btn">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon">🍎</span>
+        <h3>App Store Issues</h3>
+        <p>For billing, refunds, or purchase issues, contact Apple directly.</p>
+        <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" class="contact-btn">Report a Problem</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 GirdUp App, LLC · All Rights Reserved</span>
+  <span class="footer-logo">GirdUp</span>
+  <div style="display:flex;gap:20px;align-items:center;">
+    <a href="/eula">EULA</a>
+    <a href="/privacy">Privacy</a>
+    <a href="mailto:support@girdupapp.io">support@girdupapp.io</a>
+  </div>
+</footer>
+
+<script>
+function toggle(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+function filterFAQs(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    if (!q) { item.classList.remove('hidden'); return; }
+    const text = item.querySelector('.faq-q-text').textContent.toLowerCase();
+    const answer = item.querySelector('.faq-answer-inner') ? item.querySelector('.faq-answer-inner').textContent.toLowerCase() : '';
+    item.classList.toggle('hidden', !text.includes(q) && !answer.includes(q));
+  });
+  document.querySelectorAll('.faq-section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.faq-item')].some(i => !i.classList.contains('hidden'));
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
