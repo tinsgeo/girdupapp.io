@@ -1,1 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GirdUp — End User License Agreement</title>
+<meta name="description" content="GirdUp App, LLC End User License Agreement and Intellectual Property Notice. Effective May 22, 2025.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:    #0a0a0a;
+    --off-black:#111111;
+    --dark:     #1a1a1a;
+    --gold:     #c9a84c;
+    --gold-lt:  #e8c97a;
+    --gold-dim: #8a6e2f;
+    --white:    #f5f0e8;
+    --muted:    #b8b0a0;
+    --subtle:   #666;
+    --border:   rgba(201,168,76,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
 
+  /* ── NAV ── */
+  nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.05);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;color:var(--white);text-decoration:none;}
+  .nav-logo span{color:var(--gold);}
+  .nav-back{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+  .nav-back:hover{color:var(--gold);}
+
+  /* ── HERO ── */
+  .hero{padding:80px 40px 60px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(201,168,76,0.06) 0%,transparent 65%);pointer-events:none;}
+  .hero-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+  .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,7vw,80px);letter-spacing:3px;color:var(--white);line-height:1;margin-bottom:16px;}
+  .hero-title span{color:var(--gold);}
+  .hero-meta{font-size:13px;color:var(--muted);line-height:1.7;}
+  .hero-meta strong{color:var(--white);font-weight:500;}
+
+  /* ── NOTICE BOX ── */
+  .notice{max-width:860px;margin:0 auto 0;padding:0 40px 60px;}
+  .notice-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.25);padding:20px 24px;}
+  .notice-box p{font-size:13px;color:var(--white);line-height:1.75;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;}
+
+  /* ── RULE ── */
+  .rule{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,0.2),transparent);margin:0;}
+
+  /* ── MAIN CONTENT ── */
+  .content{max-width:860px;margin:0 auto;padding:60px 40px 100px;}
+
+  /* ── TOC ── */
+  .toc{background:var(--off-black);border:1px solid var(--border);padding:28px 32px;margin-bottom:56px;}
+  .toc-title{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .toc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 32px;}
+  .toc-list a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:8px;}
+  .toc-list a:hover{color:var(--gold);}
+  .toc-num{font-size:10px;color:var(--gold-dim);min-width:18px;}
+
+  /* ── SECTIONS ── */
+  .section{margin-bottom:56px;scroll-margin-top:80px;}
+  .section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.15);}
+  .section-num{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--gold-dim);flex-shrink:0;}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3vw,28px);letter-spacing:2px;color:var(--white);}
+
+  .subsection{margin:24px 0 0 0;}
+  .subsection-title{font-size:13px;font-weight:500;color:var(--white);letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;}
+
+  p.body{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:14px;}
+  p.body strong{color:var(--white);font-weight:500;}
+  p.body.caps{font-size:13px;color:var(--white);font-weight:500;line-height:1.75;background:rgba(255,255,255,0.03);border-left:2px solid var(--gold-dim);padding:14px 18px;margin:14px 0;}
+
+  ul.bullets{list-style:none;margin:10px 0 14px;padding:0;}
+  ul.bullets li{font-size:14px;color:var(--muted);line-height:1.75;padding:7px 0 7px 24px;border-bottom:1px solid rgba(255,255,255,0.04);position:relative;}
+  ul.bullets li:last-child{border-bottom:none;}
+  ul.bullets li::before{content:'·';position:absolute;left:6px;color:var(--gold);font-size:18px;line-height:1.4;}
+  ul.bullets li strong{color:var(--white);font-weight:500;}
+
+  /* ── SIGNATURE BLOCK ── */
+  .sig-block{margin-top:56px;padding-top:40px;border-top:1px solid var(--border);}
+  .sig-title{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;text-align:center;}
+  .sig-notice{font-size:13px;color:var(--white);font-weight:500;text-align:center;background:rgba(201,168,76,0.05);border:1px solid var(--border);padding:16px 24px;margin-bottom:32px;line-height:1.7;text-transform:uppercase;letter-spacing:0.5px;}
+  .sig-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:16px;}
+  .sig-line{border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:8px;margin-bottom:8px;}
+  .sig-label{font-size:12px;font-weight:500;color:var(--white);}
+  .sig-sub{font-size:11px;color:var(--subtle);margin-top:4px;}
+
+  /* ── FOOTER ── */
+  footer{background:var(--off-black);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
+  footer span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--subtle);}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:4px;color:var(--gold);}
+  footer a{color:var(--subtle);text-decoration:none;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+  footer a:hover{color:var(--gold);}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    nav{padding:0 20px;}
+    .hero{padding:60px 20px 40px;}
+    .notice{padding:0 20px 40px;}
+    .content{padding:40px 20px 80px;}
+    .toc-list{grid-template-columns:1fr;}
+    .sig-row{grid-template-columns:1fr;}
+    footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://girdupapp.io" class="nav-logo">Gird<span>Up</span></a>
+  <a href="https://girdupapp.io" class="nav-back">← Back to GirdUp</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-label">Legal</span>
+  <h1 class="hero-title">End User <span>License</span> Agreement</h1>
+  <p class="hero-meta">
+    <strong>GirdUp App, LLC</strong> &nbsp;·&nbsp; Effective Date: May 22, 2025 &nbsp;·&nbsp; Version 1.0<br>
+    Owner: <strong>Tinsley George</strong> &nbsp;·&nbsp; <a href="mailto:legal@girdupapp.io" style="color:var(--gold);text-decoration:none;">legal@girdupapp.io</a>
+  </p>
+</div>
+
+<div class="rule"></div>
+
+<!-- IMPORTANT NOTICE -->
+<div class="notice">
+  <div class="notice-box">
+    <p>PLEASE READ THIS AGREEMENT CAREFULLY BEFORE DOWNLOADING, INSTALLING, OR USING THE GIRDUP APPLICATION. BY CLICKING "AGREE," DOWNLOADING, INSTALLING, OR USING THIS APPLICATION, YOU AGREE TO BE BOUND BY ALL TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, OR USE THIS APPLICATION.</p>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <p class="toc-title">Table of Contents</p>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1.</span> Parties and Definitions</a></li>
+      <li><a href="#s2"><span class="toc-num">2.</span> Ownership of Intellectual Property</a></li>
+      <li><a href="#s3"><span class="toc-num">3.</span> Limited License Grant</a></li>
+      <li><a href="#s4"><span class="toc-num">4.</span> Prohibited Conduct &amp; Anti-Theft</a></li>
+      <li><a href="#s5"><span class="toc-num">5.</span> Confidentiality</a></li>
+      <li><a href="#s6"><span class="toc-num">6.</span> User-Generated Content</a></li>
+      <li><a href="#s7"><span class="toc-num">7.</span> Disclaimer of Warranties</a></li>
+      <li><a href="#s8"><span class="toc-num">8.</span> Limitation of Liability</a></li>
+      <li><a href="#s9"><span class="toc-num">9.</span> Indemnification</a></li>
+      <li><a href="#s10"><span class="toc-num">10.</span> Governing Law &amp; Disputes</a></li>
+      <li><a href="#s11"><span class="toc-num">11.</span> Enforcement &amp; Remedies</a></li>
+      <li><a href="#s12"><span class="toc-num">12.</span> Term &amp; Termination</a></li>
+      <li><a href="#s13"><span class="toc-num">13.</span> Updates &amp; Modifications</a></li>
+      <li><a href="#s14"><span class="toc-num">14.</span> General Provisions</a></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Parties and Definitions</h2>
+    </div>
+    <p class="body">This End User License Agreement ("Agreement") is a legally binding contract between you ("User," "you," or "your") and GirdUp App, LLC, a limited liability company, and its founder and sole owner Tinsley George (collectively, "GirdUp," "we," "us," or "our") governing your use of the GirdUp mobile application and all associated services, features, content, websites, and platforms (collectively, the "Application").</p>
+    <div class="subsection">
+      <p class="subsection-title">1.1 Defined Terms</p>
+      <ul class="bullets">
+        <li><strong>"Application"</strong> means the GirdUp mobile application, including all versions, updates, upgrades, patches, features, content, tools, services, APIs, and associated platforms including GirdUp Academy and WordKeeper AI.</li>
+        <li><strong>"Intellectual Property"</strong> means all inventions, ideas, concepts, methods, processes, source code, object code, algorithms, architectures, designs, graphics, text, audio, video, data, databases, trade secrets, trademarks, service marks, trade names, domain names, copyrights, patents, and any other proprietary rights, whether registered or unregistered, in any jurisdiction worldwide.</li>
+        <li><strong>"Owner"</strong> means Tinsley George and GirdUp App, LLC, jointly and severally, as the sole and exclusive owners of all Intellectual Property in and related to the Application.</li>
+        <li><strong>"Proprietary Content"</strong> means all text, course materials, lesson content, quiz questions, Biblical commentary, AI prompts, system prompts, WordKeeper AI configurations, GirdUp Academy curriculum, marketing materials, brand assets, logos, slogans, taglines, design elements, and all other original creative or functional works created by or for GirdUp App, LLC.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Ownership of Intellectual Property</h2>
+    </div>
+    <p class="body">This section constitutes GirdUp's formal assertion of its exclusive ownership of all Intellectual Property associated with the Application. This declaration is legally binding on all users and any third parties who come into contact with the Application or its underlying materials.</p>
+
+    <div class="subsection">
+      <p class="subsection-title">2.1 Absolute and Exclusive Ownership</p>
+      <p class="body">The Application, in its entirety and in all its component parts, is and shall remain the sole and exclusive property of <strong>Tinsley George and GirdUp App, LLC</strong>. This ownership is absolute, unconditional, and worldwide. No use of the Application, in whole or in part, creates any ownership rights, license rights, or interest of any kind in or to the Application in favor of any User or third party, except as expressly set forth in Section 3 of this Agreement.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">2.2 Scope of Ownership — What We Own</p>
+      <p class="body">Without limitation, GirdUp App, LLC and Tinsley George exclusively own all rights, title, and interest in and to the following:</p>
+      <ul class="bullets">
+        <li>All source code, object code, compiled code, scripts, and software comprising the Application, including front-end mobile code, back-end server code, database schemas, API integrations, and infrastructure configurations;</li>
+        <li>The concept, idea, structure, business model, and monetization strategy of GirdUp, including the app-locking mechanism tied to Scripture reading and prayer completion;</li>
+        <li>The GirdUp Academy platform, including all course content, module structures, lesson text, quiz questions, assessment designs, certification frameworks, and educational curriculum, including but not limited to "How to Read the Bible," "Biblical Worldview," and "The Armor of God" courses;</li>
+        <li>WordKeeper AI, including its name, persona, system prompt, behavioral configuration, response frameworks, crisis protocols, situational guidance structures, and all Proprietary Content used to configure its operation;</li>
+        <li>All brand assets including the GirdUp name, logo, cross mark, color palette, typography choices, taglines (including "Arm your mind before the world gets to you first"), slogans, and all associated visual and verbal identity;</li>
+        <li>The domain name girdupapp.io and all associated subdomains, websites, and digital properties;</li>
+        <li>All marketing materials, promotional content, app store listings, screenshots, preview images, and advertising copy;</li>
+        <li>All user interface designs, user experience flows, screen layouts, onboarding sequences, and visual design systems;</li>
+        <li>All data structures, database architectures, and organizational systems created for the Application;</li>
+        <li>Any and all improvements, modifications, derivative works, or enhancements to any of the above, regardless of who contributed to or suggested them.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">2.3 Copyright Notice</p>
+      <p class="body">© 2025 GirdUp App, LLC. All Rights Reserved. All content, code, design, and materials within the Application are protected by United States and international copyright law. Unauthorized reproduction, distribution, display, or creation of derivative works is strictly prohibited and may result in civil and criminal penalties.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">2.4 Trademark Notice</p>
+      <p class="body">GIRDUP™, WORDKEEPER™, GIRDUP ACADEMY™, and all associated logos, slogans, and brand identifiers are trademarks and/or service marks of GirdUp App, LLC. These marks may not be used in connection with any product, service, or business without the prior written consent of GirdUp App, LLC. Unauthorized use of these marks constitutes trademark infringement.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">2.5 Trade Secret Protection</p>
+      <p class="body">The business concept, technical architecture, WordKeeper AI system prompt and configuration, Academy curriculum design, app-locking integration methodology, and monetization strategy of GirdUp constitute trade secrets of GirdUp App, LLC. These trade secrets are protected under the Defend Trade Secrets Act of 2016 (18 U.S.C. § 1836 et seq.) and applicable state trade secret laws. Any misappropriation of these trade secrets will be prosecuted to the fullest extent of the law.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Limited License Grant</h2>
+    </div>
+    <p class="body">Subject to your acceptance of and continued compliance with this Agreement, GirdUp grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download and use the Application on your personal device(s) solely for your own personal, non-commercial use. This license does not include any right to:</p>
+    <ul class="bullets">
+      <li>Copy, reproduce, duplicate, or replicate the Application or any portion thereof;</li>
+      <li>Modify, adapt, translate, or create derivative works based on the Application;</li>
+      <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the Application;</li>
+      <li>Rent, lease, lend, sell, sublicense, assign, distribute, publish, transfer, or otherwise make available the Application to any third party;</li>
+      <li>Remove, alter, or obscure any copyright, trademark, or other proprietary notices contained in or on the Application;</li>
+      <li>Use the Application for any commercial purpose or in any manner not expressly permitted by this Agreement.</li>
+    </ul>
+    <p class="body">This license is automatically revoked upon any violation of this Agreement. GirdUp reserves the right to terminate this license at any time for any reason without notice.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Prohibited Conduct &amp; Anti-Theft Provisions</h2>
+    </div>
+    <p class="body">The following conduct is strictly prohibited and constitutes a material breach of this Agreement, exposing the violating party to legal liability including civil damages, injunctive relief, and potential criminal prosecution:</p>
+
+    <div class="subsection">
+      <p class="subsection-title">4.1 Prohibited Actions</p>
+      <ul class="bullets">
+        <li>Copying, cloning, or replicating the GirdUp Application, its concept, design, code, or functionality, in whole or in part, for any purpose;</li>
+        <li>Using any portion of the Application's source code, AI configurations, course content, or proprietary systems in any other application, product, or service;</li>
+        <li>Impersonating, mimicking, or creating a product substantially similar to GirdUp with the intent to compete with or substitute for the Application;</li>
+        <li>Using GirdUp's brand assets, trademarks, or trade dress in any unauthorized manner;</li>
+        <li>Attempting to access, extract, or obtain any proprietary information, trade secrets, or confidential data belonging to GirdUp App, LLC;</li>
+        <li>Scraping, harvesting, or systematically collecting any content, data, or materials from the Application;</li>
+        <li>Using automated tools, bots, or scripts to access or interact with the Application in any unauthorized manner;</li>
+        <li>Sharing, publishing, or publicly disclosing any confidential or proprietary information obtained through use of the Application.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">4.2 Injunctive Relief</p>
+      <p class="body">User acknowledges that any violation of Sections 2 or 4 of this Agreement would cause irreparable harm to GirdUp App, LLC for which monetary damages would be an inadequate remedy, and that GirdUp shall be entitled to seek injunctive or other equitable relief in any court of competent jurisdiction without the requirement to post bond or other security.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Confidentiality</h2>
+    </div>
+    <p class="body">By using the Application, you acknowledge that you may be exposed to proprietary and confidential information belonging to GirdUp App, LLC, including but not limited to the Application's design, functionality, systems, content, and business strategy. You agree to:</p>
+    <ul class="bullets">
+      <li>Hold all such confidential information in strict confidence;</li>
+      <li>Not disclose any confidential information to any third party without the prior written consent of GirdUp App, LLC;</li>
+      <li>Use confidential information solely for the purpose of using the Application as permitted by this Agreement;</li>
+      <li>Notify GirdUp App, LLC immediately upon discovery of any unauthorized disclosure or use of confidential information.</li>
+    </ul>
+    <p class="body">These confidentiality obligations survive the termination of this Agreement and your use of the Application.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">User-Generated Content</h2>
+    </div>
+    <p class="body">Any content you submit through the Application (including prayer journal entries, quiz responses, and interactive lesson submissions) remains your personal content. However, by submitting content, you grant GirdUp App, LLC a perpetual, worldwide, royalty-free, non-exclusive license to use anonymized, aggregated, non-personally-identifiable data derived from user activity for the purpose of improving the Application.</p>
+    <p class="body">GirdUp App, LLC does not claim ownership of your personal prayer entries or journal content. Your personal data is handled in accordance with our Privacy Policy, which is incorporated herein by reference.</p>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Disclaimer of Warranties</h2>
+    </div>
+    <p class="body caps">THE APPLICATION IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, GIRDUP APP, LLC DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    <p class="body caps">GIRDUP APP, LLC DOES NOT WARRANT THAT THE APPLICATION WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. THE WORDKEEPER AI FEATURE IS PROVIDED FOR INFORMATIONAL AND INSPIRATIONAL PURPOSES ONLY AND DOES NOT CONSTITUTE PROFESSIONAL RELIGIOUS, PSYCHOLOGICAL, MEDICAL, LEGAL, OR FINANCIAL ADVICE.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Limitation of Liability</h2>
+    </div>
+    <p class="body caps">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL GIRDUP APP, LLC OR TINSLEY GEORGE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR RELATING TO YOUR USE OF OR INABILITY TO USE THE APPLICATION, EVEN IF GIRDUP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    <p class="body caps">IN NO EVENT SHALL GIRDUP APP, LLC'S TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATING TO THIS AGREEMENT OR YOUR USE OF THE APPLICATION EXCEED THE AMOUNT YOU PAID TO GIRDUP IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2 class="section-title">Indemnification</h2>
+    </div>
+    <p class="body">You agree to defend, indemnify, and hold harmless GirdUp App, LLC, Tinsley George, and their respective officers, directors, employees, agents, and successors from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to: (a) your use of the Application; (b) your violation of this Agreement; (c) your violation of any third-party rights; or (d) any content you submit through the Application.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2 class="section-title">Governing Law &amp; Dispute Resolution</h2>
+    </div>
+    <p class="body">This Agreement shall be governed by and construed in accordance with the laws of the State of South Carolina, without regard to its conflict of law provisions. Any legal action or proceeding arising under or relating to this Agreement shall be brought exclusively in the state or federal courts located in South Carolina, and you hereby consent to personal jurisdiction in such courts.</p>
+    <p class="body caps">WAIVER OF CLASS ACTION: TO THE FULLEST EXTENT PERMITTED BY LAW, YOU WAIVE ANY RIGHT TO BRING OR PARTICIPATE IN ANY CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION AGAINST GIRDUP APP, LLC OR TINSLEY GEORGE.</p>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2 class="section-title">Enforcement &amp; Remedies</h2>
+    </div>
+    <p class="body">GirdUp App, LLC and Tinsley George reserve all rights and remedies available under applicable law, including but not limited to:</p>
+    <ul class="bullets">
+      <li>Civil litigation for copyright infringement, trademark infringement, trade secret misappropriation, breach of contract, and unfair competition;</li>
+      <li>Seeking actual damages, statutory damages (up to $150,000 per work under 17 U.S.C. § 504 for willful copyright infringement), disgorgement of profits, and punitive damages where permitted;</li>
+      <li>Injunctive and other equitable relief to prevent ongoing or threatened violations;</li>
+      <li>Referral of willful violations to appropriate law enforcement and prosecutorial authorities for criminal prosecution under the Computer Fraud and Abuse Act, the Economic Espionage Act, and other applicable statutes.</li>
+    </ul>
+    <p class="body">You acknowledge that a breach of Sections 2, 4, or 5 of this Agreement would entitle GirdUp App, LLC to immediate injunctive relief in addition to all other remedies available at law or in equity.</p>
+  </div>
+
+  <!-- SECTION 12 -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <h2 class="section-title">Term &amp; Termination</h2>
+    </div>
+    <p class="body">This Agreement is effective as of the date you first access or use the Application and continues until terminated. GirdUp App, LLC may terminate this Agreement and your license to use the Application immediately, without prior notice, for any reason, including your failure to comply with any term of this Agreement. Upon termination, you must immediately cease all use of the Application and delete all copies in your possession.</p>
+    <p class="body">Sections 2, 4, 5, 7, 8, 9, 10, and 11 shall survive termination of this Agreement.</p>
+  </div>
+
+  <!-- SECTION 13 -->
+  <div class="section" id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <h2 class="section-title">Updates &amp; Modifications</h2>
+    </div>
+    <p class="body">GirdUp App, LLC reserves the right to modify this Agreement at any time. We will provide notice of material changes by updating the Effective Date at the top of this Agreement. Your continued use of the Application after such changes constitutes your acceptance of the revised Agreement. If you do not agree to the revised terms, you must immediately cease using the Application.</p>
+  </div>
+
+  <!-- SECTION 14 -->
+  <div class="section" id="s14">
+    <div class="section-header">
+      <span class="section-num">14</span>
+      <h2 class="section-title">General Provisions</h2>
+    </div>
+
+    <div class="subsection">
+      <p class="subsection-title">14.1 Entire Agreement</p>
+      <p class="body">This Agreement, together with the Privacy Policy, constitutes the entire agreement between you and GirdUp App, LLC with respect to the Application and supersedes all prior and contemporaneous agreements and understandings.</p>
+    </div>
+    <div class="subsection">
+      <p class="subsection-title">14.2 Severability</p>
+      <p class="body">If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+    </div>
+    <div class="subsection">
+      <p class="subsection-title">14.3 No Waiver</p>
+      <p class="body">Failure by GirdUp App, LLC to enforce any right or provision of this Agreement shall not constitute a waiver of such right or provision.</p>
+    </div>
+    <div class="subsection">
+      <p class="subsection-title">14.4 Assignment</p>
+      <p class="body">You may not assign or transfer this Agreement or any of your rights hereunder without the prior written consent of GirdUp App, LLC. GirdUp App, LLC may assign this Agreement without restriction.</p>
+    </div>
+    <div class="subsection">
+      <p class="subsection-title">14.5 Contact Information</p>
+      <p class="body">For questions regarding this Agreement, intellectual property concerns, or to report violations, contact:</p>
+      <p class="body" style="margin-left:24px;border-left:2px solid var(--gold);padding-left:16px;line-height:2;">
+        <strong>GirdUp App, LLC</strong><br>
+        Attn: Tinsley George, Owner<br>
+        Email: <a href="mailto:legal@girdupapp.io" style="color:var(--gold);text-decoration:none;">legal@girdupapp.io</a><br>
+        Website: <a href="https://girdupapp.io" style="color:var(--gold);text-decoration:none;">www.girdupapp.io</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- SIGNATURE / ACKNOWLEDGMENT -->
+  <div class="sig-block">
+    <p class="sig-title">Acknowledgment</p>
+    <div class="sig-notice">BY DOWNLOADING, INSTALLING, OR USING THE GIRDUP APPLICATION, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.</div>
+    <p class="body" style="text-align:center;font-size:13px;">Last Updated: May 22, 2025</p>
+    <div class="sig-row" style="margin-top:40px;">
+      <div>
+        <div class="sig-line"></div>
+        <p class="sig-label">Tinsley George, Owner</p>
+        <p class="sig-sub">GirdUp App, LLC</p>
+      </div>
+      <div>
+        <div class="sig-line"></div>
+        <p class="sig-label">Date</p>
+        <p class="sig-sub">May 22, 2025</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<div class="rule"></div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 GirdUp App, LLC · All Rights Reserved</span>
+  <span class="footer-logo">GirdUp</span>
+  <a href="https://girdupapp.io">girdupapp.io</a>
+</footer>
+
+</body>
+</html>
