@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GirdUp — Terms of Service</title>
+<meta name="description" content="GirdUp App, LLC Terms of Service. Governing your use of the GirdUp mobile application.">
+<link rel="icon" href="/girdup_favicon_32.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:     #0a0a0a;
+    --off-black: #111111;
+    --dark:      #1a1a1a;
+    --gold:      #c9a84c;
+    --gold-lt:   #e8c97a;
+    --gold-dim:  #8a6e2f;
+    --white:     #f5f0e8;
+    --muted:     #b8b0a0;
+    --subtle:    #666;
+    --border:    rgba(201,168,76,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 0 40px; height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 4px; color: var(--white); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .nav-back:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 40px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-label { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); letter-spacing: 3px; color: var(--white); line-height: 1; margin-bottom: 16px; }
+  .hero-title span { color: var(--gold); }
+  .hero-meta { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .hero-meta strong { color: var(--white); font-weight: 500; }
+  .hero-meta a { color: var(--gold); text-decoration: none; }
+
+  /* ── INTRO BOX ── */
+  .intro-wrap { max-width: 860px; margin: 0 auto; padding: 0 40px 56px; }
+  .intro-box {
+    background: rgba(201,168,76,0.05); border: 1px solid var(--border);
+    padding: 20px 24px;
+  }
+  .intro-box p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .intro-box strong { color: var(--white); font-weight: 500; }
+
+  /* ── RULE ── */
+  .rule { width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent); }
+
+  /* ── MAIN CONTENT ── */
+  .content { max-width: 860px; margin: 0 auto; padding: 60px 40px 100px; }
+
+  /* ── TOC ── */
+  .toc { background: var(--off-black); border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 56px; }
+  .toc-title { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; }
+  .toc-list a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; display: flex; align-items: center; gap: 8px; }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num { font-size: 10px; color: var(--gold-dim); min-width: 18px; }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 56px; scroll-margin-top: 80px; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 20px; padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .section-num { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; color: var(--gold-dim); flex-shrink: 0; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 3vw, 30px); letter-spacing: 2px; color: var(--white); }
+
+  p.body { font-size: 14px; color: var(--muted); line-height: 1.85; margin-bottom: 14px; }
+  p.body:last-child { margin-bottom: 0; }
+  p.body strong { color: var(--white); font-weight: 500; }
+  p.body a { color: var(--gold); text-decoration: none; }
+  p.body a:hover { text-decoration: underline; }
+
+  /* Bullet list */
+  ul.bullets { list-style: none; margin: 10px 0 16px; padding: 0; }
+  ul.bullets li {
+    font-size: 14px; color: var(--muted); line-height: 1.8;
+    padding: 8px 0 8px 26px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+  }
+  ul.bullets li:last-child { border-bottom: none; }
+  ul.bullets li::before { content: '·'; position: absolute; left: 6px; color: var(--gold); font-size: 20px; line-height: 1.3; }
+  ul.bullets li strong { color: var(--white); font-weight: 500; }
+  ul.bullets li a { color: var(--gold); text-decoration: none; }
+  ul.bullets li a:hover { text-decoration: underline; }
+
+  /* Highlight / warning box */
+  .highlight-box {
+    background: rgba(201,168,76,0.04); border: 1px solid var(--border);
+    padding: 16px 20px; margin: 16px 0;
+  }
+  .highlight-box p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; }
+  .highlight-box strong { color: var(--gold); font-weight: 500; }
+
+  /* Contact block */
+  .contact-block {
+    border-left: 2px solid var(--gold);
+    background: var(--off-black); padding: 20px 24px; margin-top: 16px;
+  }
+  .contact-block p { font-size: 14px; color: var(--muted); line-height: 2; }
+  .contact-block a { color: var(--gold); text-decoration: none; }
+  .contact-block a:hover { text-decoration: underline; }
+  .contact-block strong { color: var(--white); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--off-black);
+    padding: 28px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  footer span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--subtle); }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 4px; color: var(--gold); }
+  footer a { color: var(--subtle); text-decoration: none; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+  footer a:hover { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .hero { padding: 60px 20px 40px; }
+    .intro-wrap { padding: 0 20px 40px; }
+    .content { padding: 40px 20px 80px; }
+    .toc-list { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Gird<span>Up</span></a>
+  <a href="/" class="nav-back">← Back to GirdUp</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-label">Legal</span>
+  <h1 class="hero-title">Terms of <span>Service</span></h1>
+  <p class="hero-meta">
+    <strong>GirdUp App, LLC</strong> &nbsp;·&nbsp; Last updated: May 23, 2026<br>
+    Questions? <a href="mailto:support@girdupapp.io">support@girdupapp.io</a>
+  </p>
+</div>
+
+<div class="rule"></div>
+
+<!-- INTRO -->
+<div class="intro-wrap">
+  <div class="intro-box">
+    <p>These Terms of Service govern your use of GirdUp, a mobile application provided by GirdUp App, LLC. <strong>By creating an account or using the app, you agree to these Terms.</strong> If you do not agree, do not use the app.</p>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- TOC -->
+  <div class="toc">
+    <p class="toc-title">Table of Contents</p>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1.</span> Eligibility</a></li>
+      <li><a href="#s2"><span class="toc-num">2.</span> Your Account</a></li>
+      <li><a href="#s3"><span class="toc-num">3.</span> What GirdUp Provides</a></li>
+      <li><a href="#s4"><span class="toc-num">4.</span> WordKeeper AI — Disclaimers</a></li>
+      <li><a href="#s5"><span class="toc-num">5.</span> Acceptable Use</a></li>
+      <li><a href="#s6"><span class="toc-num">6.</span> Subscriptions &amp; Billing</a></li>
+      <li><a href="#s7"><span class="toc-num">7.</span> Free Message Limit</a></li>
+      <li><a href="#s8"><span class="toc-num">8.</span> Fair Use &amp; Rate Limiting</a></li>
+      <li><a href="#s9"><span class="toc-num">9.</span> Intellectual Property</a></li>
+      <li><a href="#s10"><span class="toc-num">10.</span> Your Content</a></li>
+      <li><a href="#s11"><span class="toc-num">11.</span> Third-Party Services</a></li>
+      <li><a href="#s12"><span class="toc-num">12.</span> Disclaimers</a></li>
+      <li><a href="#s13"><span class="toc-num">13.</span> Limitation of Liability</a></li>
+      <li><a href="#s14"><span class="toc-num">14.</span> Indemnification</a></li>
+      <li><a href="#s15"><span class="toc-num">15.</span> Termination</a></li>
+      <li><a href="#s16"><span class="toc-num">16.</span> Changes to These Terms</a></li>
+      <li><a href="#s17"><span class="toc-num">17.</span> Governing Law &amp; Disputes</a></li>
+      <li><a href="#s18"><span class="toc-num">18.</span> Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- S1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Eligibility</h2>
+    </div>
+    <p class="body">You must be at least 13 years old to use GirdUp. By using the app, you represent that you meet this age requirement and have the legal capacity to enter into these Terms. If you are using GirdUp on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+  </div>
+
+  <!-- S2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Your Account</h2>
+    </div>
+    <p class="body">You are responsible for keeping your account credentials secure. You are responsible for all activity that occurs under your account. Notify us immediately at <a href="mailto:support@girdupapp.io">support@girdupapp.io</a> if you suspect unauthorized access. We may suspend or terminate accounts that violate these Terms.</p>
+  </div>
+
+  <!-- S3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">What GirdUp Provides</h2>
+    </div>
+    <p class="body">GirdUp offers Scripture-based features including a daily Bible reading routine, prayer list, streak tracking, daily verse, and an AI-assisted Scripture conversation feature called WordKeeper. Some features are free; others require an active subscription.</p>
+  </div>
+
+  <!-- S4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">WordKeeper AI — Disclaimers</h2>
+    </div>
+    <p class="body">WordKeeper is an AI assistant powered by a third-party language model. WordKeeper:</p>
+    <ul class="bullets">
+      <li>is provided for spiritual reflection and Bible study assistance only;</li>
+      <li>can produce inaccurate, incomplete, or misleading output and should not be relied on as authoritative;</li>
+      <li>is not a substitute for your pastor, your church, professional counseling, medical care, mental-health treatment, legal advice, or financial advice;</li>
+      <li>is not a crisis resource. If you are in crisis or considering self-harm, contact emergency services (911 in the U.S.) or the 988 Suicide &amp; Crisis Lifeline immediately.</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Always test what WordKeeper says against Scripture</strong> and seek wise counsel from trusted real-world community.</p>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Acceptable Use</h2>
+    </div>
+    <p class="body">You agree not to:</p>
+    <ul class="bullets">
+      <li>use GirdUp for any unlawful purpose or in violation of these Terms;</li>
+      <li>attempt to reverse-engineer, decompile, or interfere with the app or its underlying services;</li>
+      <li>access another user's account or data;</li>
+      <li>use the app to harass, abuse, or harm others;</li>
+      <li>use the app to generate, transmit, or store content that is unlawful, harassing, defamatory, sexually explicit, or that infringes others' rights;</li>
+      <li>attempt to bypass usage limits, paywalls, or security features;</li>
+      <li>use automated systems (bots, scrapers) to interact with the app without our written consent.</li>
+    </ul>
+  </div>
+
+  <!-- S6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Subscriptions, Billing &amp; Trials</h2>
+    </div>
+    <p class="body">WordKeeper Pro and other paid features are sold as auto-renewing subscriptions through the Apple App Store. By subscribing:</p>
+    <ul class="bullets">
+      <li>you authorize Apple to charge your payment method at the start of each billing period at the listed price;</li>
+      <li>your subscription renews automatically unless you cancel at least 24 hours before the end of the current period;</li>
+      <li>any free trial converts to a paid subscription at the end of the trial unless you cancel before the trial ends;</li>
+      <li>you can manage and cancel subscriptions through <strong>Settings → Apple Account → Subscriptions</strong> on your iOS device;</li>
+      <li>refunds are handled by Apple under their standard refund policy — we do not separately process refunds.</li>
+    </ul>
+    <p class="body">Prices, features, and entitlements may change. We will provide reasonable notice in-app before material changes take effect.</p>
+  </div>
+
+  <!-- S7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Free Message Limit</h2>
+    </div>
+    <p class="body">Without an active subscription, your access to WordKeeper is limited to a finite number of messages (currently five lifetime messages per account). The limit may change. We will not retroactively reduce paid users' entitlements.</p>
+  </div>
+
+  <!-- S8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Fair Use, Automated Abuse &amp; Rate Limiting</h2>
+    </div>
+    <p class="body">WordKeeper is offered to subscribers as an unlimited personal-use service for genuine, human conversational use. Because every conversation incurs real third-party computation cost, we reserve the right to detect, rate-limit, temporarily pause, or suspend access to WordKeeper or any other GirdUp feature in cases of:</p>
+    <ul class="bullets">
+      <li>use that materially exceeds the patterns of normal human conversation (for example, sustained bursts of messages sent automatically or at machine-like cadence);</li>
+      <li>use of bots, scripts, scrapers, or other automated tools to generate prompts or capture responses;</li>
+      <li>use intended to extract, recreate, or commercially resell the underlying AI model or its outputs;</li>
+      <li>use that attempts to bypass safety filters, generate harmful content, or otherwise violate these Terms or the policies of our upstream providers;</li>
+      <li>any use that, in our reasonable judgment, places undue load on the service or threatens the experience of other users.</li>
+    </ul>
+    <p class="body">Reasonable, human, conversational use of WordKeeper will not encounter these limits. When a limit is triggered, the in-app message will indicate that the service has been temporarily paused. Repeated or severe abuse may result in account suspension or termination without refund. This clause does not modify your subscription pricing or your entitlement to ordinary, good-faith use of the service.</p>
+  </div>
+
+  <!-- S9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2 class="section-title">Intellectual Property</h2>
+    </div>
+    <p class="body">GirdUp, the GirdUp name and logo, and all software, design, copy, illustrations, and other content we provide are owned by GirdUp App, LLC or our licensors and are protected by copyright, trademark, and other laws. We grant you a personal, non-transferable, non-exclusive, revocable license to use the app for its intended purpose, subject to these Terms.</p>
+    <p class="body">Bible text used in the app is from public-domain translations (King James Version) unless otherwise indicated.</p>
+  </div>
+
+  <!-- S10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2 class="section-title">Your Content</h2>
+    </div>
+    <p class="body">You retain ownership of the content you create in GirdUp (prayer list entries, profile answers, WordKeeper messages). You grant us a limited license to store, transmit, and process that content solely to provide the app to you. You are responsible for the content you submit and represent that you have the rights necessary to do so.</p>
+  </div>
+
+  <!-- S11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2 class="section-title">Third-Party Services</h2>
+    </div>
+    <p class="body">GirdUp relies on third-party services including Google Firebase, Anthropic, RevenueCat, and Apple. Your use of GirdUp is also subject to their applicable terms. We are not responsible for outages, errors, or actions of these third parties.</p>
+  </div>
+
+  <!-- S12 -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <h2 class="section-title">Disclaimers</h2>
+    </div>
+    <p class="body">GirdUp is provided <strong>"as is"</strong> and <strong>"as available."</strong> To the maximum extent permitted by law, we disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, accuracy, and non-infringement. We do not warrant that the app will be uninterrupted, error-free, or free from harmful components.</p>
+  </div>
+
+  <!-- S13 -->
+  <div class="section" id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <h2 class="section-title">Limitation of Liability</h2>
+    </div>
+    <p class="body">To the maximum extent permitted by law, GirdUp App, LLC and its officers, employees, and affiliates are not liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, or goodwill, arising from or related to your use of the app.</p>
+    <p class="body">Our total aggregate liability for any claim arising from or related to these Terms or the app will not exceed the greater of <strong>(a)</strong> the amount you paid us in the twelve months before the claim arose or <strong>(b)</strong> USD $50.</p>
+  </div>
+
+  <!-- S14 -->
+  <div class="section" id="s14">
+    <div class="section-header">
+      <span class="section-num">14</span>
+      <h2 class="section-title">Indemnification</h2>
+    </div>
+    <p class="body">You agree to indemnify and hold harmless GirdUp App, LLC and its officers, employees, and affiliates from any claim, demand, loss, or expense (including reasonable attorneys' fees) arising from your use of the app, your violation of these Terms, or your violation of any law or third-party right.</p>
+  </div>
+
+  <!-- S15 -->
+  <div class="section" id="s15">
+    <div class="section-header">
+      <span class="section-num">15</span>
+      <h2 class="section-title">Termination</h2>
+    </div>
+    <p class="body">You may stop using GirdUp at any time and delete your account from the in-app Account screen. We may suspend or terminate your access if you violate these Terms or if we discontinue the app. Provisions that by their nature should survive termination — intellectual property, disclaimers, limitation of liability, indemnification, governing law — will survive.</p>
+  </div>
+
+  <!-- S16 -->
+  <div class="section" id="s16">
+    <div class="section-header">
+      <span class="section-num">16</span>
+      <h2 class="section-title">Changes to These Terms</h2>
+    </div>
+    <p class="body">We may update these Terms from time to time. When changes are material, we will update the "Last updated" date above and notify you in-app. Continued use of the app after changes take effect means you accept the updated Terms.</p>
+  </div>
+
+  <!-- S17 -->
+  <div class="section" id="s17">
+    <div class="section-header">
+      <span class="section-num">17</span>
+      <h2 class="section-title">Governing Law &amp; Disputes</h2>
+    </div>
+    <p class="body">These Terms are governed by the laws of the United States and the State of South Carolina, without regard to conflict-of-law rules. Any dispute arising from or related to these Terms or the app will be resolved exclusively in the state or federal courts located in South Carolina, and you consent to personal jurisdiction in those courts.</p>
+    <p class="body">To the extent allowed by law, <strong>you waive any right to participate in a class action.</strong></p>
+  </div>
+
+  <!-- S18 -->
+  <div class="section" id="s18">
+    <div class="section-header">
+      <span class="section-num">18</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <p class="body">Questions about these Terms:</p>
+    <div class="contact-block">
+      <p>
+        <strong>GirdUp App, LLC</strong><br>
+        Attn: Tinsley George, Owner<br>
+        Email: <a href="mailto:support@girdupapp.io">support@girdupapp.io</a><br>
+        Website: <a href="https://girdupapp.io">https://girdupapp.io</a>
+      </p>
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<div class="rule"></div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 GirdUp App, LLC · All Rights Reserved</span>
+  <span class="footer-logo">GirdUp</span>
+  <div style="display:flex;gap:20px;align-items:center;">
+    <a href="/eula">EULA</a>
+    <a href="/privacy">Privacy</a>
+    <a href="mailto:support@girdupapp.io">support@girdupapp.io</a>
+  </div>
+</footer>
+
+</body>
+</html>
